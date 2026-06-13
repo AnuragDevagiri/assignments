@@ -1,0 +1,16 @@
+gmp@gmps-MacBook-Pro ~ % python3 task1.py                           
+=== Airflow Health Report for 2026-04-06 ===
+Total tasks: 7
+
+Tasks by state:
+  success: 4
+  failed: 2
+  upstream_failed: 1
+
+Failed tasks:
+  customer_data_sync → load_to_snowflake
+  user_activity_sync → extract_activity
+  user_activity_sync → load_activity (upstream_failed)
+
+Longest running task:
+  revenue_pipeline / load_revenue — 380 seconds
