@@ -1,0 +1,10 @@
+[
+  {"dag_id": "customer_data_sync", "task_id": "extract_customers", "execution_date": "2026-04-06T08:00:00Z", "state": "success", "duration_seconds": 45, "operator": "PythonOperator"},
+  {"dag_id": "customer_data_sync", "task_id": "load_to_snowflake", "execution_date": "2026-04-06T08:01:00Z", "state": "failed", "duration_seconds": 120, "operator": "SnowflakeOperator"},
+  {"dag_id": "revenue_pipeline", "task_id": "extract_revenue", "execution_date": "2026-04-06T09:00:00Z", "state": "success", "duration_seconds": 30, "operator": "PythonOperator"},
+  {"dag_id": "revenue_pipeline", "task_id": "transform_revenue", "execution_date": "2026-04-06T09:01:00Z", "state": "success", "duration_seconds": 200, "operator": "PythonOperator"},
+  {"dag_id": "user_activity_sync", "task_id": "extract_activity", "execution_date": "2026-04-06T10:00:00Z", "state": "failed", "duration_seconds": 15, "operator": "PythonOperator"},
+  {"dag_id": "user_activity_sync", "task_id": "load_activity", "execution_date": "2026-04-06T10:01:00Z", "state": "upstream_failed", "duration_seconds": 0, "operator": "SnowflakeOperator"},
+  {"dag_id": "customer_data_sync", "task_id": "extract_customers", "execution_date": "2026-04-05T08:00:00Z", "state": "failed", "duration_seconds": 10, "operator": "PythonOperator"},
+  {"dag_id": "revenue_pipeline", "task_id": "load_revenue", "execution_date": "2026-04-06T09:05:00Z", "state": "success", "duration_seconds": 380, "operator": "SnowflakeOperator"}
+]
